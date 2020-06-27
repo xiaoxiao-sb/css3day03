@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: deeppink;
+            transition: 3s;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script type="text/javascript">
+
+ /*
+ transition 不能作用在未渲染完成的元素上
+    transition 可以作用在渲染完成的元素上
+ * */
+//在一个合适的时间重新给我的box元素修改一下背景色
+ var box = document.getElementById('box');
+//
+////    单次延时定时器
+//    setTimeout(function () {
+//        box.style.background = 'yellowgreen';
+//    },3000)
+// 页面加载完成的回调   （渲染完毕）js， css ，font ，(vue react 等库文件) ，渲染完成
+    window.onload = function () {
+        box.style.background = 'yellowgreen';
+    }
+</script>
+</html>

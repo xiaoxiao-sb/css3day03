@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 300px;
+            height: 300px;
+            background: pink;
+        }
+        #inner {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            /*先要确定过渡加给谁   当前控制的元素是inner的消失与现实 所以要加给inner*/
+            transition: all 3s  ease;
+        }
+        #wrap:hover #inner{
+            /*元素整体透明  包含元素内部的内容（文字 其他子元素等等）*/
+            /*opacity: 0;*/
+            /*背景透明*/
+            background: rgba(0,0,0,0);
+
+
+        }
+        /*
+            过渡属性  只能过渡有中间过程的属性 比如宽度 高度 颜色 这些数值类的
+            渐变本质   是绘制背景图片  所以不能通过过渡属性过渡
+
+            不可过渡的属性
+            display: ;   不占位
+            visibility: hidden; 占位
+            border：不能设置半个边框
+        */
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="inner">inner</div>
+</div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.getElementById('box');
+
+
+    }
+</script>
+</html>
